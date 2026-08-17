@@ -9,13 +9,13 @@ Análisis completo del abandono de clientes de una empresa SaaS de suscripción:
 > **Sobre los datos.** RavenStack es una empresa ficticia. El diagnóstico se realiza sobre un conjunto de datos sintético construido para este proyecto, con el esquema y los volúmenes del dataset original de Kaggle. Los hallazgos ilustran lo que el procedimiento es capaz de detectar; no describen el comportamiento de clientes reales.
 
 ---
-[Ver la memoria](https://drive.google.com/file/d/13HepIFs_j4UyYcAgmvKH8feQD0hRpxZq/view))
+[Ver la memoria](https://drive.google.com/file/d/13HepIFs_j4UyYcAgmvKH8feQD0hRpxZq/view)
 
-## Dashboard
+## Dashboard 
 
 ![Cartera en riesgo](assets/dashboard-cartera-riesgo.png)
 
-**[Ver el dashboard completo →](URL_POWER_BI)**
+**[Ver el dashboard completo →](https://app.powerbi.com/view?r=eyJrIjoiNmQ5N2IwMDYtMTFjNS00YWYxLWEwNDktN2MzNDhhMjZkMTdlIiwidCI6IjM1MWZmYjE3LTRkZWItNGUyNi1iY2I1LTAyYjZjMjM2MTAwNCIsImMiOjh9&embedImagePlaceholder=true&pageName=4ce12d7f1ea7e18068a2))**
 
 Cuatro páginas, una pregunta por página: situación del negocio, diagnóstico del abandono, cartera en riesgo y plan de acción.
 
