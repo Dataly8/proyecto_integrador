@@ -85,11 +85,11 @@ Se completa con un recomendador de funcionalidades basado en la brecha de adopci
 ## Estructura del repositorio
 
 ```
-├── 01_datos/
+├── 00_datos/
 │   └── Datos_ravenstack_gemelo_csv/               Las cinco tablas en CSV
-├── 02_python/
+├── 01_python/
 │   └── ravenstack_extraccion_eda_ingesta.ipynb    Extracción vía API, EDA e ingesta
-├── 03_sql/
+├── 02_sql/
 │   ├── 01_ddl_ravenstack_gemelo.sql               Modelo relacional y restricciones
 │   ├── 02_analisis_ravenstack_gemelo.sql          Análisis y diagnóstico del churn
 │   └── 03_vistas_powerbi.sql                      Vistas creadas para el diagnóstico, el sistema de alerta y el dashboard
@@ -116,11 +116,11 @@ RUTA_DATOS_GEMELO=/ruta/a/00_datos/Datos_ravenstack_gemelo_csv
 
 El archivo `.env` no se incluye en el repositorio por contener credenciales.
 
-**2. Base de datos.** Ejecutar `03_sql/01_ddl_ravenstack_gemelo.sql` en MySQL Workbench.
+**2. Base de datos.** Ejecutar `02_sql/01_ddl_ravenstack_gemelo.sql` en MySQL Workbench.
 
 **3. Ingesta.** Ejecutar el notebook de 01_python/. El bloque de extracción descarga el dataset original desde Kaggle para reproducir el análisis exploratorio; el de ingesta carga los CSV de 01_datos/Datos_ravenstack_gemelo_csv/.
 
-**4. Análisis.** Ejecutar `03_sql/02_analisis_ravenstack_gemelo.sql` y después `03_vistas_powerbi.sql`.
+**4. Análisis.** Ejecutar `02_sql/02_analisis_ravenstack_gemelo.sql` y después `03_vistas_powerbi.sql`.
 
 **5. Dashboard.** Conectar Power BI a la base `ravenstack_gemelo` en modo importación.
 
