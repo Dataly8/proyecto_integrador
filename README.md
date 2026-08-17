@@ -91,7 +91,7 @@ Se completa con un recomendador de funcionalidades basado en la brecha de adopci
 │   ├── 01_ddl_ravenstack_gemelo.sql               Modelo relacional y restricciones
 │   ├── 02_analisis_ravenstack_gemelo.sql          Análisis y diagnóstico del churn
 │   └── 03_vistas_powerbi.sql                      Vistas creadas para el diagnóstico, el sistema de alerta y el dashboard
-└── 03_documentacion_proyecto/                     Memoria del proyecto
+└── 03_documentacion_proyecto/                     Memoria del proyecto en PDF y presentación Power Point
 ```
 
 ## Cómo reproducirlo
