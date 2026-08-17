@@ -13,6 +13,8 @@ Análisis completo del abandono de clientes de una empresa SaaS de suscripción:
 
 **[Ver la memoria del proyecto](https://drive.google.com/file/d/13HepIFs_j4UyYcAgmvKH8feQD0hRpxZq/view)**
 
+**[Ver la presentación del proyecto](https://docs.google.com/presentation/d/1jX1w91Owk9hGnGakIDW-jyYRHRBpXKXl/edit?usp=sharing&ouid=116338936294308786192&rtpof=true&sd=true)**
+
 **Cartera en riesgo**<img width="1312" height="731" alt="Captura de pantalla 2026-08-15 100539" src="https://github.com/user-attachments/assets/a1f85dbf-d108-4043-9c57-4aaaa81b4ece" />
 
 **[Ver el dashboard completo](https://app.powerbi.com/view?r=eyJrIjoiNmQ5N2IwMDYtMTFjNS00YWYxLWEwNDktN2MzNDhhMjZkMTdlIiwidCI6IjM1MWZmYjE3LTRkZWItNGUyNi1iY2I1LTAyYjZjMjM2MTAwNCIsImMiOjh9&embedImagePlaceholder=true&pageName=4ce12d7f1ea7e18068a2)**
@@ -83,15 +85,14 @@ Se completa con un recomendador de funcionalidades basado en la brecha de adopci
 ## Estructura del repositorio
 
 ```
-├── 00_datos/
+├── 01_datos/
 │   └── Datos_ravenstack_gemelo_csv/               Las cinco tablas en CSV
-├── 01_python/
+├── 02_python/
 │   └── ravenstack_extraccion_eda_ingesta.ipynb    Extracción vía API, EDA e ingesta
-├── 02_sql/
+├── 03_sql/
 │   ├── 01_ddl_ravenstack_gemelo.sql               Modelo relacional y restricciones
 │   ├── 02_analisis_ravenstack_gemelo.sql          Análisis y diagnóstico del churn
 │   └── 03_vistas_powerbi.sql                      Vistas creadas para el diagnóstico, el sistema de alerta y el dashboard
-└── 03_documentacion_proyecto/                     Memoria del proyecto en PDF y presentación Power Point
 ```
 
 ## Cómo reproducirlo
@@ -115,11 +116,11 @@ RUTA_DATOS_GEMELO=/ruta/a/00_datos/Datos_ravenstack_gemelo_csv
 
 El archivo `.env` no se incluye en el repositorio por contener credenciales.
 
-**2. Base de datos.** Ejecutar `02_sql/01_ddl_ravenstack_gemelo.sql` en MySQL Workbench.
+**2. Base de datos.** Ejecutar `03_sql/01_ddl_ravenstack_gemelo.sql` en MySQL Workbench.
 
-**3. Ingesta.** Ejecutar el notebook de 01_python/. El bloque de extracción descarga el dataset original desde Kaggle para reproducir el análisis exploratorio; el de ingesta carga los CSV de 00_datos/Datos_ravenstack_gemelo_csv/.
+**3. Ingesta.** Ejecutar el notebook de 01_python/. El bloque de extracción descarga el dataset original desde Kaggle para reproducir el análisis exploratorio; el de ingesta carga los CSV de 01_datos/Datos_ravenstack_gemelo_csv/.
 
-**4. Análisis.** Ejecutar `02_sql/02_analisis_ravenstack_gemelo.sql` y después `03_vistas_powerbi.sql`.
+**4. Análisis.** Ejecutar `03_sql/02_analisis_ravenstack_gemelo.sql` y después `03_vistas_powerbi.sql`.
 
 **5. Dashboard.** Conectar Power BI a la base `ravenstack_gemelo` en modo importación.
 
