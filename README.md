@@ -88,7 +88,7 @@ Se completa con un recomendador de funcionalidades basado en la brecha de adopci
 ├── 00_datos/
 │   └── Datos_ravenstack_gemelo_csv/               Las cinco tablas en CSV
 ├── 01_python/
-│   └── ravenstack_extraccion_eda_ingesta.ipynb    Extracción vía API, EDA e ingesta
+│   └── 01_ravenstack_extraccion_EDA_ingesta.ipynb    Extracción vía API, EDA e ingesta
 ├── 02_sql/
 │   ├── 01_ddl_ravenstack_gemelo.sql               Modelo relacional y restricciones
 │   ├── 02_analisis_ravenstack_gemelo.sql          Análisis y diagnóstico del churn
