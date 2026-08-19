@@ -11,7 +11,7 @@ Análisis completo del abandono de clientes de una empresa SaaS de suscripción:
 ---
 **[Ver portafolio del proyecto en Notion](https://shimmering-channel-2df.notion.site/An-lisis-de-Churn-en-RavenStack-39c0587b6ac4804796f2f1da02cc9c68?source=copy_link)**
 
-**[Ver la memoria del proyecto](https://drive.google.com/file/d/13HepIFs_j4UyYcAgmvKH8feQD0hRpxZq/view)**
+**[Ver la memoria del proyecto](https://drive.google.com/file/d/1NxDNwe9PyT4pr-4BXQAAi0OrQMNkk2zf/view?usp=sharing)**
 
 **[Ver la presentación del proyecto](https://docs.google.com/presentation/d/1jX1w91Owk9hGnGakIDW-jyYRHRBpXKXl/edit?usp=sharing&ouid=116338936294308786192&rtpof=true&sd=true)**
 
@@ -90,9 +90,8 @@ Se completa con un recomendador de funcionalidades basado en la brecha de adopci
 ├── 01_python/
 │   └── 01_ravenstack_extraccion_EDA_ingesta.ipynb    Extracción vía API, EDA e ingesta
 ├── 02_sql/
-│   ├── 01_ddl_ravenstack_gemelo.sql               Modelo relacional y restricciones
+│   ├── 01_ddl_vistas_ravenstack_gemelo.sql               Archivo DDL, modelo relacional y vistas creadas para el diagnóstico, el sistema de alerta y el dashboard
 │   ├── 02_analisis_ravenstack_gemelo.sql          Análisis y diagnóstico del churn
-│   └── 03_vistas_powerbi.sql                      Vistas creadas para el diagnóstico, el sistema de alerta y el dashboard
 ```
 
 ## Cómo reproducirlo
