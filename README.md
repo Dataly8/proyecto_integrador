@@ -13,8 +13,6 @@ Análisis completo del abandono de clientes de una empresa SaaS de suscripción:
 
 **[Ver la memoria del proyecto](https://drive.google.com/file/d/1NxDNwe9PyT4pr-4BXQAAi0OrQMNkk2zf/view?usp=sharing)**
 
-**[Ver la presentación del proyecto](https://docs.google.com/presentation/d/1jX1w91Owk9hGnGakIDW-jyYRHRBpXKXl/edit?usp=sharing&ouid=116338936294308786192&rtpof=true&sd=true)**
-
 **Cartera en riesgo**<img width="1312" height="731" alt="Captura de pantalla 2026-08-15 100539" src="https://github.com/user-attachments/assets/a1f85dbf-d108-4043-9c57-4aaaa81b4ece" />
 
 **[Ver el dashboard completo](https://app.powerbi.com/view?r=eyJrIjoiNmQ5N2IwMDYtMTFjNS00YWYxLWEwNDktN2MzNDhhMjZkMTdlIiwidCI6IjM1MWZmYjE3LTRkZWItNGUyNi1iY2I1LTAyYjZjMjM2MTAwNCIsImMiOjh9&embedImagePlaceholder=true&pageName=4ce12d7f1ea7e18068a2)**
