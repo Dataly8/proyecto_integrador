@@ -115,11 +115,11 @@ RUTA_DATOS_GEMELO=/ruta/a/00_datos/Datos_ravenstack_gemelo_csv
 
 El archivo `.env` no se incluye en el repositorio por contener credenciales.
 
-**2. Base de datos.** Ejecutar `02_sql/01_ddl_ravenstack_gemelo.sql` en MySQL Workbench.
+**2. Base de datos.** Ejecutar `02_sql/01_ddl__vistas_ravenstack_gemelo.sql` en MySQL Workbench. Primero el DDL y luego las vistas para el análisis, el sistema de alerta y para Power BI.
 
 **3. Ingesta.** Ejecutar el notebook de 01_python/. El bloque de extracción descarga el dataset original desde Kaggle para reproducir el análisis exploratorio; el de ingesta carga los CSV de 01_datos/Datos_ravenstack_gemelo_csv/.
 
-**4. Análisis.** Ejecutar `02_sql/02_analisis_ravenstack_gemelo.sql` y después `03_vistas_powerbi.sql`.
+**4. Análisis.** Ejecutar `02_sql/02_analisis_ravenstack_gemelo.sql`.
 
 **5. Dashboard.** Conectar Power BI a la base `ravenstack_gemelo` en modo importación.
 
