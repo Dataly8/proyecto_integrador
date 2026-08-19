@@ -86,12 +86,12 @@ Se completa con un recomendador de funcionalidades basado en la brecha de adopci
 
 ```
 ├── 00_datos/
-│   └── Datos_ravenstack_gemelo_csv/               Las cinco tablas en CSV
+│   └── Datos_ravenstack_gemelo_csv/                  Las cinco tablas sintéticas en CSV
 ├── 01_python/
 │   └── 01_ravenstack_extraccion_EDA_ingesta.ipynb    Extracción vía API, EDA e ingesta
 ├── 02_sql/
-│   ├── 01_ddl_vistas_ravenstack_gemelo.sql               Archivo DDL, modelo relacional y vistas creadas para el diagnóstico, el sistema de alerta y el dashboard
-│   ├── 02_analisis_ravenstack_gemelo.sql          Análisis y diagnóstico del churn
+│   ├── 01_ddl_vistas_ravenstack_gemelo.sql           Archivo DDL, modelo relacional y vistas creadas para el diagnóstico, el sistema de alerta y el dashboard
+│   ├── 02_analisis_ravenstack_gemelo.sql             Análisis y diagnóstico del churn
 ```
 
 ## Cómo reproducirlo
@@ -141,4 +141,4 @@ Los scripts de auditoría y de generación del conjunto sintético no se incluye
 
 ---
 
-**Marta Quevedo Oltra** · Proyecto Integrador · Unicorn Academy
+**Marta Quevedo Oltra** · Proyecto Integrador · Unicorn Academy 🦄
