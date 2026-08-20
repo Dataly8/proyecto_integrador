@@ -632,7 +632,7 @@ ORDER BY cuentas DESC;
 =============================================================================================================================== 
 Vistas para Power BI | Proyecto Integrador RavenStack
 Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
-Fase 7. Visualizacion en Power BI (Ravenstack_gemelo)
+Fase 7. Visualizacion en Power BI 
 
 NOTA: 
 Estas vistas existen con dos propósitos:
