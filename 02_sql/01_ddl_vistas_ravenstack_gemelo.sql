@@ -1,11 +1,11 @@
-/* ===========================================================================================
+/* ______________________________________________________
 Este archivo consta de 2 partes:
-1. Archivo DDL
-2. VISTAS:
+1. Archivo DDL 
+2. Tres bloques de creación de Vistas:
 		--> Vistas Base para el Análisis de Churn
 		--> Vistas para Sistema de Alerta y Recomendador
 		--> Vistas para Power BI 
-------------------------------------------------- */
+__________________________________________________________ */
 
 /* ===========================================================================================
 Archivo DDL | Proyecto Integrador RavenStack
