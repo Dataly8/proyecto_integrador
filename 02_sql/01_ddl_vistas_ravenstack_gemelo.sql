@@ -1,4 +1,13 @@
 /* ===========================================================================================
+Este archivo consta de 2 partes:
+1. Archivo DDL
+2. VISTAS:
+		--> Vistas Base para el Análisis de Churn
+		--> Vistas para Sistema de Alerta y Recomendador
+		--> Vistas para Power BI 
+------------------------------------------------- */
+
+/* ===========================================================================================
 Archivo DDL | Proyecto Integrador RavenStack
 Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
 Fase 2. Modelado y creación de la base de datos en MySQL (dataset gemelo)
@@ -90,7 +99,7 @@ escalation_flag BOOL NOT NULL,
 CONSTRAINT fk_support_tickets FOREIGN KEY (account_id)
     REFERENCES accounts(account_id) ON DELETE RESTRICT
 ) ENGINE=InnoDB;
-/* ============================================= Finalización archivo DDL ================================================ */
+/* ============================================= Finalización Archivo DDL ================================================ */
 
 
 
@@ -98,9 +107,9 @@ USE ravenstack_gemelo;
 
 /* 
 ===============================================================================================================================
-VISTAS BASE PARA EL ANÁLISIS | Proyecto Integrador RavenStack
+Vistas Base para el Análisis de Churn | Proyecto Integrador RavenStack
 Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
-Fase 5. Diagnóstico del churn (sobre dataset gemelo)
+Fase 5. Diagnóstico del churn
 
 NOTA:
 Este archivo queda comentado en una pequeña nota en la memoria del proyecto, al principio del apartado Fase 5 (página 36).
@@ -225,16 +234,16 @@ JOIN metricas_por_cuenta mpc ON ecc.account_id = mpc.account_id
 GROUP BY ecc.es_churn;  # 15 cuentas sin valor: 3 churned y 12 activas
 
 
-/* ============================================= Finalización de las vistas usadas para el análisis de churn ================================================ */
+/* ============================================= Finalización Vistas Base para el Análisis de Churn ================================================ */
 
 
 
 
 /* 
 =============================================================================================================================== 
-VISTAS PARA SISTEMA ALERTA Y RECOMENDADOR | Proyecto Integrador RavenStack
+Vistas para Sistema de Alerta y Recomendador | Proyecto Integrador RavenStack
 Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
-Fase 6. Sistema de alerta temprana y recomendador de funcionalidades (Ravenstack_gemelo)
+Fase 6. Sistema de alerta temprana y recomendador de funcionalidades 
 
 NOTA: 
 Este archivo está dedicado a elaborar pieza a pieza el sistema de alerta temprana sobre las señales detectadas en la fase 
@@ -614,14 +623,14 @@ FROM recomendador_funcionalidades
 GROUP BY feature_name
 ORDER BY cuentas DESC;
 
-/* ============================================= Finalización vistas para sistema alerta temprana y recomendador  ================================================ */
+/* ============================================= Finalización Vistas para Sistema de Alerta y Recomendador  ================================================ */
 
 
 
 
 /* 
 =============================================================================================================================== 
-VISTAS PARA POWER BI | Proyecto Integrador RavenStack
+Vistas para Power BI | Proyecto Integrador RavenStack
 Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
 Fase 7. Visualizacion en Power BI (Ravenstack_gemelo)
 
@@ -693,4 +702,4 @@ FROM (
 GROUP BY mes
 ORDER BY mes ASC;
 
-/* ============================================= Finalización creación de vistas para Power BI  ================================================ */
+/* ============================================= Finalización Vistas para Power BI  ================================================ */
