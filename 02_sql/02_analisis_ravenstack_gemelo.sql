@@ -497,4 +497,4 @@ FROM canal
 GROUP BY canal
 ORDER BY tasa_churn DESC;
 
-/* ============================================= Finalización del análisis de churn ================================================ */
+/* ============================================= Finalización Archivo Análisis ================================================ */
