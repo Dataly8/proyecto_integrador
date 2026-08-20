@@ -4,7 +4,7 @@ Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
 Fase 2. Modelado y creación de la base de datos en MySQL (dataset gemelo)
 
 NOTA:
-Este script está documentado en la memoria del proyecto en el apartado Fase 2 en la página 21.
+Este archivo está documentado en la memoria del proyecto en el apartado Fase 2 en la página 21.
  ============================================================================================== */
 
 
@@ -103,7 +103,7 @@ Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
 Fase 5. Diagnóstico del churn (sobre dataset gemelo)
 
 NOTA:
-Este script queda comentado en una pequeña nota en la memoria del proyecto, al principio del apartado Fase 5 (página 36).
+Este archivo queda comentado en una pequeña nota en la memoria del proyecto, al principio del apartado Fase 5 (página 36).
 ===============================================================================================================================
 */
 
@@ -237,7 +237,7 @@ Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
 Fase 6. Sistema de alerta temprana y recomendador de funcionalidades (Ravenstack_gemelo)
 
 NOTA: 
-Este script está dedicado a elaborar pieza a pieza el sistema de alerta temprana sobre las señales detectadas en la fase 
+Este archivo está dedicado a elaborar pieza a pieza el sistema de alerta temprana sobre las señales detectadas en la fase 
 anterior y finaliza con un recomendador de funcionalidades que todavía no han usado para las cuentas vivas calificadas como en riesgo.
 
 Este script tiene una arquitectura de código repartida en dos partes y consiste en 5 piezas de código:
@@ -626,7 +626,7 @@ Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
 Fase 7. Visualizacion en Power BI (Ravenstack_gemelo)
 
 NOTA: 
-Este script existe con dos propósitos:
+Estas vistas existen con dos propósitos:
 
 -- 1. -- Facilitar el modelado de datos en Power BI, ahorrando el trabajo de combinar tablas dentro del mismo. 
  Por ello se combinan todas las vistas creadas con anterioridad en una sola tabla de hechos (a excepción de la vista recomendador que trabaja a parte). 
