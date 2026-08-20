@@ -3,11 +3,11 @@
 Archivo Análisis | Proyecto Integrador RavenStack
 Autora: Marta Quevedo Oltra | Unicorn Edition 13.0
 Fase 5. Diagnóstico del churn 
+_______________________________________________________________________________________________________________________________
 
 NOTA: 
-Este archivo es el diagnóstico oficial de análisis de churn (sobre el dataset ravenstack_gemelo). 
-Todos los resultados de estas consultas quedan documentados e interpretados en la memoria del proyecto, consulta a consulta 
-a partir del apartado Fase 5 (página 36).
+Este archivo es el diagnóstico oficial de análisis de churn (sobre el dataset ravenstack_gemelo). Todos los resultados de estas 
+consultas quedan documentados e interpretados en la memoria del proyecto, a partir del apartado Fase 5 (página 36).
 =============================================================================================================================== 
  */
 
