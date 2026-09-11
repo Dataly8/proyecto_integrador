@@ -15,7 +15,7 @@ Análisis completo del abandono de clientes de una empresa SaaS de suscripción:
 
 **Cartera en riesgo**<img width="1312" height="731" alt="Captura de pantalla 2026-08-15 100539" src="https://github.com/user-attachments/assets/a1f85dbf-d108-4043-9c57-4aaaa81b4ece" />
 
-**[Ver el dashboard completo](https://app.powerbi.com/view?r=eyJrIjoiNmQ5N2IwMDYtMTFjNS00YWYxLWEwNDktN2MzNDhhMjZkMTdlIiwidCI6IjM1MWZmYjE3LTRkZWItNGUyNi1iY2I1LTAyYjZjMjM2MTAwNCIsImMiOjh9&embedImagePlaceholder=true&pageName=4ce12d7f1ea7e18068a2)**
+**[Ver el dashboard completo](https://app.powerbi.com/view?r=eyJrIjoiMjBhZDMyNmItNGRiMy00MjZjLTkwN2QtOWVlZWQ4NTBiYWEzIiwidCI6IjM1MWZmYjE3LTRkZWItNGUyNi1iY2I1LTAyYjZjMjM2MTAwNCIsImMiOjh9&embedImagePlaceholder=true&pageName=4ce12d7f1ea7e18068a2)**
 
 Cuatro páginas, una pregunta por página: situación del negocio, diagnóstico del abandono, cartera en riesgo y plan de acción.
 
