@@ -650,7 +650,7 @@ Todos los LEFT JOIN son para conservar las cuentas perdidas aunque no tengan pun
 =============================================================================================================================== 
  */
 
--- 1. -- Creación de una vista (tabla de hechos), con una fila por cuenta con todo lo que el dashboard necesita:
+-- 1. -- VISTA BI. Creación de una vista (tabla de hechos), con una fila por cuenta con todo lo que el dashboard necesita:
 
 CREATE OR REPLACE VIEW bi_hechos_cuenta AS
 
@@ -683,7 +683,7 @@ LEFT JOIN puntuacion_riesgo_cuenta prc ON ecc.account_id = prc.account_id
 LEFT JOIN cartera_clientes_priorizada ccp ON ecc.account_id = ccp.account_id;
 
 
--- 2. -- Creación de una vista con las altas y las bajas por mes, ya agregadas.
+-- 2. -- VISTA BI. Creación de una vista con las altas y las bajas por mes, ya agregadas.
 
 CREATE OR REPLACE VIEW bi_altas_bajas_mes AS
 
@@ -701,5 +701,74 @@ FROM (
 
 GROUP BY mes
 ORDER BY mes ASC;
+
+
+
+-- 3. -- VISTA BI -- Creación de la vista comparativa de señales entre cuentas activas y perdidas --
+/*  
+Devuelve una fila por señal con su valor medio en cada grupo, en el formato que necesita el gráfico comparativo de la página 2 del dashboard.
+
+Replica la lógica de la Consulta 13 (señales de producto) y la Consulta 15 (señales de soporte), pero girando el resultado: aquellas devuelven una fila por
+grupo con una columna por señal; aquí se necesita lo contrario, una fila por señal con una columna por grupo, que es lo que un gráfico de barras puede leer.
+*/
+
+CREATE OR REPLACE VIEW bi_senales_comparativa AS
+
+WITH referencia AS (
+    SELECT 
+		account_id, 
+		es_churn,
+		COALESCE(fecha_churn, '2024-12-31') AS fecha_referencia 
+    FROM estado_churn_cuenta),
+
+actividad_90d AS ( 
+    SELECT 
+		r.account_id, 
+        r.es_churn,
+		COUNT(fu.id) AS eventos,
+		AVG(fu.usage_count) AS intensidad,
+		AVG(fu.error_count) AS errores
+    FROM referencia r
+    LEFT JOIN subscriptions s ON r.account_id = s.account_id
+    LEFT JOIN feature_usage fu ON s.subscription_id = fu.subscription_id
+	AND fu.usage_date > DATE_SUB(r.fecha_referencia, INTERVAL 90 DAY) 
+	AND fu.usage_date <= r.fecha_referencia
+    GROUP BY r.account_id, r.es_churn),
+
+soporte_90d AS (
+	SELECT
+		r.account_id,
+		COUNT(st.ticket_id) AS incidencias,
+		AVG(st.satisfaction_score) AS satisfaccion,
+		AVG(st.escalation_flag) * 100 AS escalado
+	FROM referencia r
+	LEFT JOIN support_tickets st ON r.account_id = st.account_id
+	AND st.submitted_at >  DATE_SUB(r.fecha_referencia, INTERVAL 90 DAY)
+	AND st.submitted_at <= r.fecha_referencia
+	GROUP BY r.account_id),
+
+medias AS (
+	SELECT
+		AVG(CASE WHEN a.es_churn = 0 THEN a.intensidad END) AS int_act,
+		AVG(CASE WHEN a.es_churn = 1 THEN a.intensidad END) AS int_per,
+		AVG(CASE WHEN a.es_churn = 0 THEN a.eventos END) AS eve_act,
+		AVG(CASE WHEN a.es_churn = 1 THEN a.eventos END) AS eve_per,
+		AVG(CASE WHEN a.es_churn = 0 THEN a.errores END) AS err_act,
+		AVG(CASE WHEN a.es_churn = 1 THEN a.errores END) AS err_per,
+		AVG(CASE WHEN a.es_churn = 0 THEN sp.incidencias END) AS inc_act,
+		AVG(CASE WHEN a.es_churn = 1 THEN sp.incidencias END) AS inc_per,
+		AVG(CASE WHEN a.es_churn = 0 THEN sp.satisfaccion END) AS sat_act,
+		AVG(CASE WHEN a.es_churn = 1 THEN sp.satisfaccion END) AS sat_per,
+		AVG(CASE WHEN a.es_churn = 0 THEN sp.escalado END) AS esc_act,
+		AVG(CASE WHEN a.es_churn = 1 THEN sp.escalado END) AS esc_per
+	FROM actividad_90d a
+	JOIN soporte_90d sp ON a.account_id = sp.account_id)
+
+SELECT '1. Uso por sesión'AS senal, ROUND(int_act,2) AS valor_activas, ROUND(int_per,2) AS valor_perdidas FROM medias
+UNION ALL SELECT '2. Sesiones en el trimestre', ROUND(eve_act,1), ROUND(eve_per,1) FROM medias
+UNION ALL SELECT '3. Errores por sesión', ROUND(err_act,3), ROUND(err_per,3) FROM medias
+UNION ALL SELECT '4. Incidencias abiertas', ROUND(inc_act,2), ROUND(inc_per,2) FROM medias
+UNION ALL SELECT '5. Satisfacción (1-5)', ROUND(sat_act,2), ROUND(sat_per,2) FROM medias
+UNION ALL SELECT '6. Incidencias escaladas (%)',ROUND(esc_act,2), ROUND(esc_per,2) FROM medias;
 
 /* ============================================= Finalización Vistas para Power BI  ================================================ */
